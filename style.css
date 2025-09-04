@@ -1,0 +1,152 @@
+/* Reset cơ bản */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  max-width: 800px;
+  width: 100%;
+  animation: slideUp 0.8s ease;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2b2d42;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  animation: fadeIn 1.2s ease;
+}
+
+.question {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question:hover {
+  transform: translateY(-5px);
+  background-color: #f9f9f9;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.question h3 {
+  font-size: 1.3rem;
+  font-weight: 1000;
+  color: #000000;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+label:hover {
+  background: #f0f8ff;
+  transform: translateX(5px);
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.correct {
+  color: #2ecc71;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease, pulse 1.5s infinite;
+}
+
+.wrong {
+  color: #e74c3c;
+  font-weight: bold;
+  animation: shake 0.4s ease;
+}
+
+.result {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Nút */
+button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
