@@ -17,5 +17,27 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+// Chặn chuột phải
+document.addEventListener("contextmenu", function(e) {
+  e.preventDefault();
+});
+
+// Chặn phím F12, Ctrl+Shift+I, Ctrl+U
+document.addEventListener("keydown", function(e) {
+  // F12
+  if (e.key === "F12") {
+    e.preventDefault();
+  }
+  // Ctrl+Shift+I
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
+    e.preventDefault();
+  }
+  // Ctrl+U (xem source)
+  if (e.ctrlKey && e.key === "u") {
+    e.preventDefault();
+  }
+});
+</script>
 </body>
 </html>
